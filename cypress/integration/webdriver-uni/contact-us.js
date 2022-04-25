@@ -18,16 +18,17 @@ describe("Test Contract us from via webdriveruni", () => {
         cy.get('[name="last_name"]').type("Cypress");
         cy.get('textarea.feedback-input').type('This is a test');
         cy.get('[type="submit"]').click();
-        cy.get('body').should('contain', 'Invalid email address');
+        cy.get('body').should('contain', 'Error: all fields are required');
     })
 
-    it("Should not be able to submit a successful submission via contact us form as all fileds are required", () => {
+    it("Should not be able to submit a successful submission via contact us form as valid email is required", () => {
         cy.visit("https://webdriveruniversity.com/Contact-Us/contactus.html");
         cy.get('[name="first_name"]').type("Cypress");
         cy.get('[name="last_name"]').type("Cypress");
+        cy.get('[name="email"]').type("mailtest.com");
         cy.get('textarea.feedback-input').type('This is a test');
         cy.get('[type="submit"]').click();
-        cy.get('body').should('contain', 'Error: all fields are required');
+        cy.get('body').should('contain', 'Invalid email address');
     })
 
 })
