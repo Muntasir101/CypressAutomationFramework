@@ -1,3 +1,40 @@
 1. Open Cypress
-cmd: .\node_modules\.bin\cypress open 
+.\node_modules\.bin\cypress open 
 
+2. Headless run on Electron
+.\node_modules\.bin\cypress run 
+
+3. Non Headedless on electron 
+.\node_modules\.bin\cypress run --headed
+
+4. Headless on Chrome
+.\node_modules\.bin\cypress run --browser chrome 
+or
+.\node_modules\.bin\cypress run -b chrome
+
+5. Non Headles on Chrome
+.\node_modules\.bin\cypress run --headed --browser chrome
+
+6. Headless on Firefox
+.\node_modules\.bin\cypress run --browser firefox 
+or
+.\node_modules\.bin\cypress run -b firefox
+
+7. Non Headles on Firefox
+.\node_modules\.bin\cypress run --headed --browser firefox
+
+8. Headless on Edge
+.\node_modules\.bin\cypress run --browser edge 
+or
+.\node_modules\.bin\cypress run -b edge
+
+9. Non Headles on Edge
+.\node_modules\.bin\cypress run --headed --browser edge
+
+10. Run specific test
+.\node_modules\.bin\cypress run --spec filepath
+example: .\node_modules\.bin\cypress run --spec cypress/integration/common/title.js
+
+11. Run full folder 
+.\node_modules\.bin\cypress run --spec filepath
+example: .\node_modules\.bin\cypress run --spec cypress/integration/common/*
